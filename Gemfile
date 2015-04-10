@@ -33,8 +33,20 @@ gem "oauth"
 gem "mail"
 
 group :test, :development do
+  # Use Capistrano for deployment
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler', '>= 1.1.2'
+  gem 'capistrano-ext'
+  gem 'capistrano3-puma'
+
   gem "rspec-rails", "~> 2.6"
   gem "machinist"
   gem "sqlite3"
   gem "faker"
+end
+
+group :production do
+  gem 'puma'
 end
